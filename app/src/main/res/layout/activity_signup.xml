@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_signup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="akash.com.akashkumar.Signup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="50dp"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/ip_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ip_email">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/ed_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:colorControlActivated="@color/colorPrimary"
+                android:colorControlNormal="@color/colorPrimary"
+                android:hint="Enter Name"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="15sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/ip_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ip_email">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/ed_username"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:singleLine="true"
+                android:colorControlActivated="@color/colorPrimary"
+                android:colorControlNormal="@color/colorPrimary"
+                android:hint="Enter User Name"
+
+                android:padding="10dp"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="15sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/ip_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/ed_email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter Email Id"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="15sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/ip_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ip_email">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/ed_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:colorControlActivated="@color/colorPrimary"
+                android:colorControlNormal="@color/colorPrimary"
+                android:hint="@string/user_pswd"
+                android:singleLine="true"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="15sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/ip_phn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ip_email">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/ed_phn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:colorControlActivated="@color/colorPrimary"
+                android:colorControlNormal="@color/colorPrimary"
+                android:hint="Enter Mobile Number"
+                android:singleLine="true"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
+                android:maxLength="10"
+                android:textSize="15sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/ip_designation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ip_email">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/ed_designation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:singleLine="true"
+                android:colorControlActivated="@color/colorPrimary"
+                android:colorControlNormal="@color/colorPrimary"
+                android:hint="Enter Designation"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="15sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <Button
+            android:id="@+id/btn_signupp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Signup"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimaryDark"/>
+
+    </LinearLayout>
+
+</LinearLayout>
