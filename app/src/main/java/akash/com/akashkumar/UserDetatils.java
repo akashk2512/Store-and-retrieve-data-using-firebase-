@@ -3,6 +3,7 @@ package akash.com.akashkumar;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Akash on 7/2/2017.
@@ -10,13 +11,13 @@ import java.util.HashMap;
 
 public class UserDetatils {
 
- private HashMap<String,UserData> hashMap = new HashMap<>();
+ private List<UserData> userList = new ArrayList<>();
 
-    public HashMap<String, UserData> getHashMap() {
-        return hashMap;
+    public List<UserData> getUserList() {
+        return userList;
     }
 
-    public void setHashMap(HashMap<String, UserData> hashMap) {
-        this.hashMap = hashMap;
+    public void setUserList(List<UserData> userList) {
+        this.userList = userList;
     }
 }

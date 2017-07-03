@@ -2,6 +2,8 @@ package akash.com.akashkumar;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,11 +36,12 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.ed_phn)
     EditText ed_phn;
 
+    SimpleCursorAdapter simpleCursorAdapter;
     DbHandler dbHandler;
     boolean validate;
     Context mContext;
 
-
+    Cursor cursor;
     DatabaseReference databaseReference;
     String mailpattren = "^([_A-Za-z0-9-\\+]{3,})+(\\.[_A-Za-z0-9-]+)*@"
             + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
@@ -53,7 +56,6 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
         dbHandler = new DbHandler(mContext);
         dbHandler.open();
         btn_signupp.setOnClickListener(this);
-
 
     }
 
@@ -110,15 +112,14 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
                         ed_phn.getText().toString().trim(),
                         ed_designation.getText().toString().trim());
                 String pushId = databaseReference.push().getKey();
-                UserData userData = new UserData();
 
-                userData.setName(ed_name.getText().toString().trim());
-                userData.setEmail(email.getText().toString().trim());
-                userData.setDesignation(ed_designation.getText().toString().trim());
-                userData.setPassword(ed_password.getText().toString().trim());
-                userData.setPhone(ed_phn.getText().toString().trim());
-                userData.setUserName(ed_username.getText().toString().trim());
-                databaseReference.child(pushId).setValue(userData);
+                cursor = dbHandler.getAllUserData();
+
+                // insert data in pojo
+                UserDetatils userDetatils = AppUtils.keepDataInPojo(mContext, cursor);
+
+                Log.d("SignupList",userDetatils.getUserList().size()+"");
+                databaseReference.child(pushId).setValue(userDetatils.getUserList());
                 AppUtils.showToast(mContext,"Data Saved in FireBase and Sqlite");
                 Intent intent = new Intent(mContext,LoginActivity.class);
                 startActivity(intent);

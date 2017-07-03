@@ -1,6 +1,5 @@
 package akash.com.akashkumar;
 
-import android.content.Context;
 import android.database.Cursor;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
@@ -17,10 +16,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
 
 import akash.com.akashkumar.AppUtils.AppUtils;
 import butterknife.Bind;
@@ -33,10 +28,6 @@ public class ShowAllUser extends AppCompatActivity {
     DbHandler  dbHandler;
     SimpleCursorAdapter simpleCursorAdapter;
 
-    private DatabaseReference mFirebaseDatabase;
-    private FirebaseDatabase mFirebaseInstance;
-
-    String userId;
     JSONArray jsonData;
 
     @Override
@@ -58,14 +49,13 @@ public class ShowAllUser extends AppCompatActivity {
 
             listData.setAdapter(simpleCursorAdapter);
             jsonData = AppUtils.convertCursorToJSON(ShowAllUser.this,cursor);
-            AppUtils.showToast(ShowAllUser.this,jsonData.toString());
+//            AppUtils.showToast(ShowAllUser.this,jsonData.toString());
+//            AppUtils.keepDataInPojo(ShowAllUser.this,cursor);
 
         }
 
 
     }
-
-
 
 
 }
